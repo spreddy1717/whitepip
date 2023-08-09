@@ -1,8 +1,9 @@
 from django.urls import path
 from . import views
-from .views import BookCreateView
+
+from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
-    path("/", views.Book, name="Book"),
-    path("api/books/", BookCreateView.as_view(), name="create-book"),
+    path("api/books/", views.BookList.as_view()),
 ]
+urlpatterns = format_suffix_patterns(urlpatterns)
