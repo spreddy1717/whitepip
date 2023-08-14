@@ -21,7 +21,7 @@ class Author(models.Model):
 
 class Category(models.Model):
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    categeory_name = models.CharField(max_length=50)
+    category_name = models.CharField(max_length=50)
     description = models.TextField(max_length=1000)
 
     def save(self, *args, **kwargs):
