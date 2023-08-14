@@ -17,7 +17,7 @@ class Author(models.Model):
 
     def __str__(self):
         return self.name
-    
+
 
 class Category(models.Model):
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -31,7 +31,7 @@ class Category(models.Model):
 
     def __str__(self):
         return self.Categeoryname
-    
+
 
 class Book(models.Model):
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
