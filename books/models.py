@@ -15,7 +15,7 @@ class Author(models.Model):
 
 class Category(models.Model):
     uuid = models.UUIDField(primary_key=True)
-    Categeoryname = models.CharField(max_length=50)
+    category_name = models.CharField(max_length=50)
     description = models.TextField(max_length=1000)
 
     def __str__(self):
@@ -25,7 +25,7 @@ class Category(models.Model):
 class Book(models.Model):
     uuid = models.UUIDField(primary_key=True)
     title = models.CharField(max_length=1000)
-    ISBN = models.CharField(max_length=13, unique=True)
+    isbn = models.CharField(max_length=13, unique=True)
     summary = models.TextField()
     price = models.DecimalField(decimal_places=2, max_digits=7)
     publish_date = models.DateField()
