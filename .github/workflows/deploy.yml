@@ -16,12 +16,12 @@ jobs:
       - name: Login to AWS ECR
         id: login-ecr
         run: |
-          aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
+          aws ecr get-login-password --region ${{ secrets.us-east-1 }} | docker login --username AWS --password-stdin ${{ secrets.596385826266 }}.dkr.ecr.${{ secrets.us-east-1 }}.amazonaws.com
 
       - name: Build and push Docker image
         run: |
-          docker build -t ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.ECR_REPOSITORY_NAME }}:$GITHUB_SHA .
-          docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.ECR_REPOSITORY_NAME }}:$GITHUB_SHA
+          docker build -t ${{ secrets.596385826266 }}.dkr.ecr.${{ secrets.us-east-1 }}.amazonaws.com/${{ secrets.bookstoredeploymentcontainer }}:$GITHUB_SHA .
+          docker push ${{ secrets.596385826266 }}.dkr.ecr.${{ secrets.us-east-1}}.amazonaws.com/${{ secrets.bookstoredeploymentcontainer }}:$GITHUB_SHA
 
       - name: Cleanup old Docker images
         id: cleanup-images
